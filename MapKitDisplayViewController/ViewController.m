@@ -7,18 +7,20 @@
 //
 
 #import "ViewController.h"
-
+#import <CoreLocation/CoreLocation.h>
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad
-{
+@synthesize mapView;
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    }
 
 - (void)didReceiveMemoryWarning
 {

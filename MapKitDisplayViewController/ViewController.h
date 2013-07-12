@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MapKit.h>
+#import <MapKit/MKPinAnnotationView.h>
 @interface ViewController : UIViewController
+ <CLLocationManagerDelegate> {
+    CLLocationManager*      locationManager;
+    CLLocation*             locationObject;
+}@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
